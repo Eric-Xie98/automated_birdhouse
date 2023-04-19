@@ -1,0 +1,44 @@
+module decoder(ctrl_writeReg, o0, o1, o2, o3, o4, o5, o6, o7, o8, o9, o10, o11, o12, o13, o14, o15, o16, o17, o18, o19, o20, o21, o22, o23, o24, o25, o26, o27, o28, o29, o30, o31);
+    input [4:0] ctrl_writeReg;
+    output o0, o1, o2, o3, o4, o5, o6, o7, o8, o9, o10, o11, o12, o13, o14, o15, o16, o17, o18, o19, o20, o21, o22, o23, o24, o25, o26, o27, o28, o29, o30, o31;
+    wire[4:0] nER;
+
+    not n0(nER[0], ctrl_writeReg[0]);
+    not n1(nER[1], ctrl_writeReg[1]);
+    not n2(nER[2], ctrl_writeReg[2]);
+    not n3(nER[3], ctrl_writeReg[3]);
+    not n4(nER[4], ctrl_writeReg[4]);
+
+    and a0(o0, nER[0], nER[1], nER[2], nER[3], nER[4]);
+    and a1(o1, ctrl_writeReg[0], nER[1], nER[2], nER[3], nER[4]);
+    and a2(o2, nER[0], ctrl_writeReg[1], nER[2], nER[3], nER[4]);
+    and a3(o3, ctrl_writeReg[0], ctrl_writeReg[1], nER[2], nER[3], nER[4]);
+    and a4(o4, nER[0], nER[1], ctrl_writeReg[2], nER[3], nER[4]);
+    and a5(o5, ctrl_writeReg[0], nER[1], ctrl_writeReg[2], nER[3], nER[4]);
+    and a6(o6, nER[0], ctrl_writeReg[1], ctrl_writeReg[2], nER[3], nER[4]);
+    and a7(o7, ctrl_writeReg[0], ctrl_writeReg[1], ctrl_writeReg[2], nER[3], nER[4]);
+    and a8(o8, nER[0], nER[1], nER[2], ctrl_writeReg[3], nER[4]);
+    and a9(o9, ctrl_writeReg[0], nER[1], nER[2], ctrl_writeReg[3], nER[4]);
+    and a10(o10, nER[0], ctrl_writeReg[1], nER[2], ctrl_writeReg[3], nER[4]);
+    and a11(o11, ctrl_writeReg[0], ctrl_writeReg[1], nER[2], ctrl_writeReg[3], nER[4]);
+    and a12(o12, nER[0], nER[1], ctrl_writeReg[2], ctrl_writeReg[3], nER[4]);
+    and a13(o13, ctrl_writeReg[0], nER[1], ctrl_writeReg[2], ctrl_writeReg[3], nER[4]);
+    and a14(o14, nER[0], ctrl_writeReg[1], ctrl_writeReg[2], ctrl_writeReg[3], nER[4]);
+    and a15(o15, ctrl_writeReg[0], ctrl_writeReg[1], ctrl_writeReg[2], ctrl_writeReg[3], nER[4]);
+    and a16(o16, nER[0], nER[1], nER[2], nER[3], ctrl_writeReg[4]);
+    and a17(o17, ctrl_writeReg[0], nER[1], nER[2], nER[3], ctrl_writeReg[4]);
+    and a18(o18, nER[0], ctrl_writeReg[1], nER[2], nER[3], ctrl_writeReg[4]);
+    and a19(o19, ctrl_writeReg[0], ctrl_writeReg[1], nER[2], nER[3], ctrl_writeReg[4]);
+    and a20(o20, nER[0], nER[1], ctrl_writeReg[2], nER[3], ctrl_writeReg[4]);
+    and a21(o21, ctrl_writeReg[0], nER[1], ctrl_writeReg[2], nER[3], ctrl_writeReg[4]);
+    and a22(o22, nER[0], ctrl_writeReg[1], ctrl_writeReg[2], nER[3], ctrl_writeReg[4]);
+    and a23(o23, ctrl_writeReg[0], ctrl_writeReg[1], ctrl_writeReg[2], nER[3], ctrl_writeReg[4]);
+    and a24(o24, nER[0], nER[1], nER[2], ctrl_writeReg[3], ctrl_writeReg[4]);
+    and a25(o25, ctrl_writeReg[0], nER[1], nER[2], ctrl_writeReg[3], ctrl_writeReg[4]);
+    and a26(o26, nER[0], ctrl_writeReg[1], nER[2], ctrl_writeReg[3], ctrl_writeReg[4]);
+    and a27(o27, ctrl_writeReg[0], ctrl_writeReg[1], nER[2], ctrl_writeReg[3], ctrl_writeReg[4]);
+    and a28(o28, nER[0], nER[1], ctrl_writeReg[2], ctrl_writeReg[3], ctrl_writeReg[4]);
+    and a29(o29, ctrl_writeReg[0], nER[1], ctrl_writeReg[2], ctrl_writeReg[3], ctrl_writeReg[4]);
+    and a30(o30, nER[0], ctrl_writeReg[1], ctrl_writeReg[2], ctrl_writeReg[3], ctrl_writeReg[4]);
+    and a31(o31, ctrl_writeReg[0], ctrl_writeReg[1], ctrl_writeReg[2], ctrl_writeReg[3], ctrl_writeReg[4]);
+endmodule
